@@ -1,0 +1,68 @@
+// we are using CSS grids below
+* {
+  margin: 0;
+  padding: 0.5em;
+  color: #ffffff;
+  background-color: #555555;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "title title" "header1 header1" "header header" "sidebar sidebar";
+  grid-gap: 10px;
+}
+
+.title {
+  grid-area: title;
+  width: 355px;
+  height: 15px;
+  text-align: center;
+  justify-self: center;
+  border-radius: 5px;
+}
+
+.header {
+  grid-area: header;
+  justify-self: center;
+  text-align: justify;
+}
+
+.header1 {
+  grid-area: header1;
+  justify-self: center;
+  border-radius: 5px;
+  text-align: justify;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  width: 355px;
+  height: 15px;
+  text-align: center;
+  border-radius: 5px;
+  justify-self: center;
+}
+
+.submit {
+  text-align: center;
+}
+.grid div:nth-child(even) {
+  background-color: clear;
+}
+
+.grid div:nth-child(odd) {
+  background-color: #111111;
+}
+
+@media screen and (min-width: 736px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 500px 500px 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: ". title title ." ". header header ." ". header1 header1 ."
+      ". sidebar sidebar .";
+    grid-gap: 5px;
+  }
+}
